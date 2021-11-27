@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Database: `edit_ascww_database`
 --
 
+create schema `edit_ascww_database`;
+use `edit_ascww_database`;
+
 -- --------------------------------------------------------
 
 --
