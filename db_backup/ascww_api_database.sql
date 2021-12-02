@@ -18,11 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `edit_ascww_database`
+-- Database: `ascww_api_database`
 --
 
-create schema `edit_ascww_database`;
-use `edit_ascww_database`;
+create schema `ascww_api_database`;
+use `ascww_api_database`;
 
 -- --------------------------------------------------------
 
