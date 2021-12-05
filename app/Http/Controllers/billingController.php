@@ -18,6 +18,5 @@ class billingController extends Controller
                             //    ->where('Bills_Region_Name', $Bills_Region_Name)
                                 ->first();
         return $selectedBill;
-
     }
 }
