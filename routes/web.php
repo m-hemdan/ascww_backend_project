@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () { return view('welcome'); });
+Route::view('/', 'welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*
 Route::prefix('api')->group(function(){
     route::get('getAllBill','billingController@getAllBill');
 });
@@ -26,3 +26,4 @@ Route::prefix('api')->group(function(){
 Route::prefix('api')->group(function(){
     route::get('search/{Bills_AccountNum}','billingController@search');
 });
+*/

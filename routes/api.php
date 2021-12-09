@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Controllers\billingController;
+use  App\Http\Controllers\billingController;
 
 
 /*
@@ -16,9 +16,16 @@ use Illuminate\Http\Controllers\billingController;
 */
 
 
-
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::get("search/{Bills_AccountNum}",[billingController::class,'search']);
+*/
+
+Route::middleware('auth:api')->get('/user', 'UserController@show');
+
+Route::get('getAllBill','billingController@getAllBill');
+
+Route::get("search/{Bills_AccountNum}",[billingController::class,'search']);
+
 
