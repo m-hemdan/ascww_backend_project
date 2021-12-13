@@ -24,8 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->get('/user', 'UserController@show');
 
-Route::get('getAllBill','billingController@getAllBill');
+Route::get('apiGetAllBill','billingController@getAllBill');
 
-Route::get("search/{Bills_AccountNum}",[billingController::class,'search']);
+Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
 
 
