@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use  App\Http\Controllers\billingController;
+use  App\Http\Controllers\studentController;
 
 
 /*
@@ -28,4 +29,4 @@ Route::get('apiGetAllBill','billingController@getAllBill');
 
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
 
-
+Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
