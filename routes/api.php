@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use  App\Http\Controllers\billingController;
 use  App\Http\Controllers\studentController;
+use App\Http\Controllers\SearchItemController;
 
 header('Access-Control-Allow-Origin:  *');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
@@ -30,8 +31,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->get('/user', 'UserController@show');
 
-Route::get('apiGetAllBill','billingController@getAllBill');
 
+Route::get('apiGetAllBill','billingController@getAllBill');
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
 
 Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
+Route::get('getAllItemsSearch','SearchItemController@getAllItem');

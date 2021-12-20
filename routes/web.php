@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('api')->group(function(){
     route::get('getAllBill','billingController@getAllBill');
     route::get('search/{Bills_AccountNum}','billingController@search');
+
 });
 
 //Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
