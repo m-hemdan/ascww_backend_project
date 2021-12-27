@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use  App\Http\Controllers\billingController;
 use  App\Http\Controllers\studentController;
 use App\Http\Controllers\SearchItemController;
+use App\Http\Controllers\ComplaineController;
+use App\Http\Controllers\NewsController;
 
 header('Access-Control-Allow-Origin:  *');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
@@ -34,6 +36,8 @@ Route::middleware('auth:api')->get('/user', 'UserController@show');
 
 Route::get('apiGetAllBill','billingController@getAllBill');
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
-
 Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
 Route::get('getAllItemsSearch','SearchItemController@getAllItem');
+Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine");
+Route::get('apiGetAllNews','NewsController@getAllNews');
+
