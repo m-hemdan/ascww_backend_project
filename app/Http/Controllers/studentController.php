@@ -8,8 +8,6 @@ class studentController extends Controller
 {
     public function save(Request $request)
     {
-       
-       
         $student= new student;
         $student->name=$request->name; 
         $student->userId=$request->userId;

@@ -8,7 +8,7 @@ class NewsController extends Controller
 {
     public function getAllNews()
     {
-    $AllNews=news::all();
-    return $AllNews;
+        $AllNews=news::all();
+        return $AllNews;
     }
 }

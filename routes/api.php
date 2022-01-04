@@ -36,8 +36,12 @@ Route::middleware('auth:api')->get('/user', 'UserController@show');
 
 Route::get('apiGetAllBill','billingController@getAllBill');
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
+
 Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
+
 Route::get('getAllItemsSearch','SearchItemController@getAllItem');
+
 Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine");
+
 Route::get('apiGetAllNews','NewsController@getAllNews');
 
