@@ -11,4 +11,9 @@ class NewsController extends Controller
     $AllNews=news::all();
     return $AllNews;
     }
+    public function backItemFun($selectedItem){
+       $selectedSearch=news::where('details', 'like', '%' . $selectedItem . '%')->distinct()->get();
+      
+        return $selectedSearch; 
+    }
 }

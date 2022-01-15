@@ -34,10 +34,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->get('/user', 'UserController@show');
 
 
-Route::get('apiGetAllBill','billingController@getAllBill');
-Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);
-Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
-Route::get('getAllItemsSearch','SearchItemController@getAllItem');
-Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine");
-Route::get('apiGetAllNews','NewsController@getAllNews');
+Route::get('apiGetAllBill','billingController@getAllBill');    //api to get All bill in inquire your bill
+Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);   // api to get specific bill like 261
+Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");  // api to insert student in school
+Route::get('getAllItemsSearch','SearchItemController@getAllItem'); //pass
+Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine"); //provide complain
+Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news in welcome page 
+Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
 

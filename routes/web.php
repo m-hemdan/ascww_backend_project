@@ -1,5 +1,7 @@
 <?php
 use  App\Http\Controllers\studentController;
+use App\Http\Controllers\uploadController;
+use App\Http\Controllers\NewsController;
 
 header('Access-Control-Allow-Origin:  *');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
@@ -16,17 +18,23 @@ header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Autho
 |
 */
 
-// Route::get('/', function () { return view('welcome'); });
+//Route::get('/', function () { return view('welcome'); });
 Route::view('/', 'welcome');
-
+Route::view('/index','index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::prefix('api')->group(function(){
-    route::get('getAllBill','billingController@getAllBill');
-    route::get('search/{Bills_AccountNum}','billingController@search');
-
+/*Route::get('contact',function(){
+    return view('app');
 });
-
+*/
+Route::prefix('api')->group(function(){
+    Route::get('getAllBill','billingController@getAllBill');
+    Route::get('search/{Bills_AccountNum}','billingController@search');
+ 
+});
+//Route::post('upload','uploadController@handle');
+//Route::get('insert','uploadController@insertform');
+//Route::post('create','uploadController@insert');
 //Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
+Route::match(['get','post'],"/create",[uploadController::class,'create'])->name("createnews");

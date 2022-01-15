@@ -1,3 +1,11 @@
+@extends('layouts.app')
+@section('styles')
+@endsection
+@section('content')
+hello form blade
+@endsection
+@section('script')
+@endsection
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -67,12 +75,14 @@
     </head>
     <body>
     <div id="app center">
-         welcome Ascww backend
-<Home></Home>
+         welcome Ascww backend bbb
+      
+         @yield('content');
+         <Home></Home>
 
 </div>
 
-<script src="{{ asset('js/app.js')}} " ></script>
+<script src="{{ asset('/js/app.js')}}"></script>
 
 </body>
 </html>

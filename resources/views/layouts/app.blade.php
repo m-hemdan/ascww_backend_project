@@ -64,6 +64,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            @yield('styles');
         </style>
     </head>
     <body>
@@ -73,7 +74,33 @@
             <div class="content">
                 <div id="app">
                     <h1>welcome blade</h1>
+                    
+                    <form action = "/create" method = "post">
+                        <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+                        <table>
+                        <tr>
+                        <td>item</td>
+                        <td><input type='text' name='item' /></td>
+                        <tr>
+                        <td>link</td>
+                        <td><input type="text" name='link'/></td>
+                        </tr>
+                        <tr>
+                        <td>details</td>
+                        <td><input type="text" name='details'/></td>
+                        </tr>
+                        
+                        <td colspan = '2'>
+                        <input type = 'submit' value = "Add news"/>
+                        </td>
+                        </tr>
+                        </table>
+                    </form>
+
+
                     @yield('content')
+
+                 <Home></Home>
                 
                 </div>
             </div>

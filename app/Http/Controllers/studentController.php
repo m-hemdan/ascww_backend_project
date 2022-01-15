@@ -29,4 +29,5 @@ class studentController extends Controller
             echo "sorry" ;
         }
     }
+    
 }
