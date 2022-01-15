@@ -31,7 +31,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('api')->group(function(){
     Route::get('getAllBill','billingController@getAllBill');
     Route::get('search/{Bills_AccountNum}','billingController@search');
- 
 });
 //Route::post('upload','uploadController@handle');
 //Route::get('insert','uploadController@insertform');

@@ -8,8 +8,8 @@ class NewsController extends Controller
 {
     public function getAllNews()
     {
-    $AllNews=news::all();
-    return $AllNews;
+        $AllNews=news::all();
+        return $AllNews;
     }
     public function backItemFun($selectedItem){
        $selectedSearch=news::where('details', 'like', '%' . $selectedItem . '%')->distinct()->get();
