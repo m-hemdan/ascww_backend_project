@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 use App\student;
 use Illuminate\Http\Request;
 
+<<<<<<< Updated upstream
 // Test Studen Controller
+=======
+// Student Controller
+>>>>>>> Stashed changes
 class studentController extends Controller
 {
     public function save(Request $request)
