@@ -42,5 +42,6 @@ Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'save
 Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news in welcome page 
 Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
 Route::get('apiGetAllProjects','projectsController@getAllProjects'); //api to get all news in welcome page 
+Route::get('apiGetAllTenders','TendersController@getAllTenders'); //api to get all tenders in all tenders page
 
 
