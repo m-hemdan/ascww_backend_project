@@ -6,6 +6,7 @@ use  App\Http\Controllers\studentController;
 use App\Http\Controllers\SearchItemController;
 use App\Http\Controllers\ComplaineController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\projectsController;
 
 header('Access-Control-Allow-Origin:  *');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
@@ -40,5 +41,6 @@ Route::get('getAllItemsSearch','SearchItemController@getAllItem'); //pass
 Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine"); //provide complain
 Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news in welcome page 
 Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
+Route::get('apiGetAllProjects','projectsController@getAllProjects'); //api to get all news in welcome page 
 
 

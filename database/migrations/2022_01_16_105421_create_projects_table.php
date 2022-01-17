@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProjectsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->text("mainImg");
+            $table->text("item");
+            $table->text("link");
+            $table->text("details");
+            $table->text("img1");
+            $table->text("img2");
+            $table->text("img3");
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('projects');
+    }
+}
