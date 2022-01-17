@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\student;
 use Illuminate\Http\Request;
 
+// Test Studen Controller
 class studentController extends Controller
 {
     public function save(Request $request)
