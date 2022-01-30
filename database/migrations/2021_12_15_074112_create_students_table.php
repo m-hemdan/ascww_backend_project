@@ -24,6 +24,7 @@ class CreateStudentsTable extends Migration
             $table->text('phone');
             $table->string('address');
             $table->string('total_grade');
+            $table->MEDIUMBLOB('file');
             $table->timestamps();
        
         });

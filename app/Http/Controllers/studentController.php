@@ -19,6 +19,7 @@ class studentController extends Controller
         $student->phone=$request->phone;
         $student->address=$request->address;
         $student->total_grade=$request->total_grade;
+        $student->fileName=$request->nameFile;
         if( $student->save())
         {
             echo $student->name;

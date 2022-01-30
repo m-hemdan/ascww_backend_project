@@ -7,7 +7,7 @@ use App\Http\Controllers\SearchItemController;
 use App\Http\Controllers\ComplaineController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\projectsController;
-
+use App\Http\Controllers\FileController;
 header('Access-Control-Allow-Origin:  *');
 header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
@@ -43,5 +43,7 @@ Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news i
 Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
 Route::get('apiGetAllProjects','projectsController@getAllProjects'); //api to get all news in welcome page 
 Route::get('apiGetAllTenders','TendersController@getAllTenders'); //api to get all tenders in all tenders page
+Route::match(['get','post'],"/upload",[FileController::class,'savePdf'])->name("savepdfStudent");
+
 
 
