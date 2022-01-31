@@ -9,7 +9,7 @@ class FileController extends Controller
     public function savePdf(Request $request){
      $file =$request->file('key1');
     if($file)
-    {  $name = $file->getClientOriginalName();
+    {  $name =time().'.'. $file->getClientOriginalName();
        $destinationPath = public_path('\assets');
        $file->move($destinationPath, $name);
        return $name ;

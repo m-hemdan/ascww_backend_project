@@ -76,9 +76,10 @@ hello form blade
     <body>
     <div id="app center">
          welcome Ascww backend bbb
-      
+       
+        
          @yield('content');
-         <Home></Home>
+         <Home></Home>  <a class="btn btn-success" href='{{url("/uploadpage")}}'>upload page</a>
 
 </div>
 

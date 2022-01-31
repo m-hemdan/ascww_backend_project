@@ -37,3 +37,7 @@ Route::prefix('api')->group(function(){
 //Route::post('create','uploadController@insert');
 //Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");
 Route::match(['get','post'],"/create",[uploadController::class,'create'])->name("createnews");
+//Route::get('/uploadpage',[studentController::class,'uploadPage']);
+
+Route::get('/show',[studentController::class,'showAllStudent']); //show all student
+Route::get('/download/{file}',[studentController::class,'downloadPdfFile']);   //chose the correct file 

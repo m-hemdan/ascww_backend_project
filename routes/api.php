@@ -33,7 +33,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 */
 
 Route::middleware('auth:api')->get('/user', 'UserController@show');
-
 Route::get('apiGetAllBill','billingController@getAllBill');    //api to get All bill in inquire your bill
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);   // api to get specific bill like 261
 Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");  // api to insert student in school
@@ -43,7 +42,6 @@ Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news i
 Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
 Route::get('apiGetAllProjects','projectsController@getAllProjects'); //api to get all news in welcome page 
 Route::get('apiGetAllTenders','TendersController@getAllTenders'); //api to get all tenders in all tenders page
-Route::match(['get','post'],"/upload",[FileController::class,'savePdf'])->name("savepdfStudent");
 
-
-
+Route::match(['get','post'],"/upload",[studentController::class,'savePdf'])->name("savepdfStudent");
+Route::get('apiGetAllStudent','studentController@showAllStudent'); //api to get all news in welcome page 

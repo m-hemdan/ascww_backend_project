@@ -74,8 +74,8 @@
             <div class="content">
                 <div id="app">
                     <h1>welcome blade</h1>
-                    
-                    <form action = "/create" method = "post">
+                            
+                       <form action = "/create" method = "post">
                         <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
                         <table>
                         <tr>
