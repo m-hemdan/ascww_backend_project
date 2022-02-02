@@ -40,4 +40,4 @@ Route::match(['get','post'],"/create",[uploadController::class,'create'])->name(
 //Route::get('/uploadpage',[studentController::class,'uploadPage']);
 
 Route::get('/show',[studentController::class,'showAllStudent']); //show all student
-Route::get('/download/{file}',[studentController::class,'downloadPdfFile']);   //chose the correct file 
+Route::get('/assets/{file}',[studentController::class,'downloadPdfFile']);   //chose the correct file 

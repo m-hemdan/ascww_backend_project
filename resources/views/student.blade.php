@@ -16,9 +16,8 @@
             <th>سنه الحصول علي الشهاده الاعداديه</th>
             <th>تليفون</th>
             <th> العنوان</th>
-          
             <th>المجموع الكلي </th>
-        
+            <th>اسم الملف</th>
             <th>ملف الصور</th>
         </tr>
              @foreach($data as $data)
@@ -32,9 +31,11 @@
             <td>{{$data->year_of_graduated}}</td>
             <td>{{$data->phone}}</td>
             <td>{{$data->address}}</td>
+      
             <td>{{$data->total_grade}}</td>
+            <td>{{$data->fileName}}</td>
          <!--   <td><a href="">view</a></td>   -->
-            <td><a href="{{url('/download',$data->fileName)}}">download file</a></td>
+            <td><a href="{{url('/assets',$data->fileName)}}">download file</a></td>
         </tr>
     @endforeach
 </table>
