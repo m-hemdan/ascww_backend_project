@@ -37,7 +37,7 @@ Route::get('apiGetAllBill','billingController@getAllBill');    //api to get All 
 Route::get("apiSearch/{Bills_AccountNum}",[billingController::class,'search']);   // api to get specific bill like 261
 Route::match(['get','post'],"/student",[studentController::class,'save'])->name("saveStudent");  // api to insert student in school
 Route::get('getAllItemsSearch','SearchItemController@getAllItem'); //pass
-Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine"); //provide complain
+//Route::match(['get','post'],"/insertComplaine",[ComplaineController::class,'saveX'])->name("saveComplaine"); //provide complain
 Route::get('apiGetAllNews','NewsController@getAllNews'); //api to get all news in welcome page 
 Route::get("selectedItemSearch/{selectedItem}",[NewsController::class,'backItemFun']); //get all item in news table with word in selected item 
 Route::get('apiGetAllProjects','projectsController@getAllProjects'); //api to get all news in welcome page 
